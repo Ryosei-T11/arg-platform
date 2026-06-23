@@ -1,0 +1,7 @@
+{
+  "template": "personal-blog",
+  "blogName": "jane's little corner",
+  "fakeDomain": "janewrites.blog",
+  "bio": "sustainability analyst by day, overthinker by night",
+  "nav": [{ "label": "Home", "href": "home.html" }]
+}

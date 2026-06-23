@@ -1,0 +1,19 @@
+{
+  "_comment": "Versi PUBLIK dari answer-keys/case-01.json — sengaja TANPA field acceptedAnswers. Aman dipakai di hub (client-side) untuk menampilkan urutan puzzle, prompt, dan status lock/unlock. Kalau menambah puzzle baru di answer-keys, ingat update file ini juga.",
+  "caseSlug": "case-01",
+  "order": ["who-disabled-daniel-account", "decrypt-memo", "final-accusation"],
+  "puzzles": {
+    "who-disabled-daniel-account": {
+      "prompt": "Siapa yang menonaktifkan akun Daniel Kurniawan? (cek log di server backup)",
+      "pointValue": 20
+    },
+    "decrypt-memo": {
+      "prompt": "Dekripsi encrypted_memo.txt (Vigenere, kata kunci nama perusahaan). Siapa yang bertindak sendirian menurut memo itu?",
+      "pointValue": 25
+    },
+    "final-accusation": {
+      "prompt": "Apa motif sebenarnya di balik pengunduran diri palsu Daniel?",
+      "pointValue": 40
+    }
+  }
+}

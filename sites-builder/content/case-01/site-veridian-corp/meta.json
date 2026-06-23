@@ -1,0 +1,12 @@
+{
+  "template": "corporate-site",
+  "companyName": "Veridian Industries",
+  "fakeDomain": "veridian-industries.com",
+  "foundedYear": 2008,
+  "tagline": "Engineering a Cleaner Tomorrow.",
+  "nav": [
+    { "label": "Home", "href": "home.html" },
+    { "label": "Tentang Kami", "href": "about.html" },
+    { "label": "Berita Pers", "href": "press.html" }
+  ]
+}

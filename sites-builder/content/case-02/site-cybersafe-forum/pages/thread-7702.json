@@ -1,0 +1,38 @@
+{
+  "title": "Akun kembar dipakai untuk minta pinjam uang",
+  "fakePath": "/thread/7702.html",
+  "threadTitle": "[WASPADA] Akun kembarku dipakai buat minta pinjam uang ke kenalan",
+  "startedBy": "mira_w",
+  "postedDate": "13 Jun 2026",
+  "replyCount": 3,
+  "posts": [
+    {
+      "username": "mira_w",
+      "rank": "Member Baru",
+      "initials": "MW",
+      "timestamp": "13 Jun 2026, 10:02",
+      "html": "<p>Foto-foto profilku dipakai bikin akun kembar, lalu dipakai DM teman-temanku minta pinjam uang mendesak. Ada yang pernah alami ini? Bagaimana cara lacak siapa di belakangnya?</p>"
+    },
+    {
+      "username": "phish_hunter_id",
+      "rank": "Moderator",
+      "initials": "PH",
+      "timestamp": "13 Jun 2026, 11:40",
+      "html": "<p>Pola ini umum disebut 'profile cloning'. Biasanya pelaku scrape foto publik, lalu pakai untuk akun penipuan baru. Coba cek apakah kamu pernah klik link aneh di email belakangan ini — sering kali foto dicuri lewat akses akun cloud/email yang kebobol, bukan cuma di-screenshot dari medsos.</p>"
+    },
+    {
+      "username": "mira_w",
+      "rank": "Member Baru",
+      "initials": "MW",
+      "timestamp": "13 Jun 2026, 14:15",
+      "html": "<p>Sekarang aku ingat, dua minggu lalu aku dapat email 'verifikasi akun' yang aku klik karena kelihatan resmi. Aku akan cek inbox-ku lagi buat email itu.</p>"
+    },
+    {
+      "username": "phish_hunter_id",
+      "rank": "Moderator",
+      "initials": "PH",
+      "timestamp": "13 Jun 2026, 14:50",
+      "html": "<p>Bagus. Kalau ketemu, cek header email-nya (domain pengirim asli, bukan nama tampilan). Sering kali domainnya mirip tapi bukan domain resmi. Itu titik awal pelacakan IP/server si pengirim.</p>"
+    }
+  ]
+}

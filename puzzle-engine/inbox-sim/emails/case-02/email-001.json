@@ -1,0 +1,11 @@
+{
+  "id": "email-001",
+  "from": "verification@instagrarn-secure.com",
+  "fromName": "Instagram Security Team",
+  "to": "mira.w@mirawijaya.blog",
+  "subject": "Tindakan Diperlukan: Verifikasi Akun Anda Sebelum Ditangguhkan",
+  "date": "2026-05-29T14:20:00",
+  "read": false,
+  "bodyHtml": "<p>Pengguna yang terhormat,</p><p>Kami mendeteksi aktivitas tidak biasa pada akun Anda. Untuk melindungi keamanan akun, mohon verifikasi identitas Anda dalam 24 jam melalui tautan berikut, atau akun akan ditangguhkan secara permanen.</p><p>[VERIFIKASI SEKARANG]</p><p>Tim Keamanan Instagram</p>",
+  "attachments": []
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decryption Tool</title>
+<link rel="icon" href="data:,">
+<style>
+  :root {
+    --dec-bg: #0c0e12;
+    --dec-panel: #15181e;
+    --dec-border: #2a2f3a;
+    --dec-text: #d6dae3;
+    --dec-accent: #7fdba0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--dec-bg);
+    color: var(--dec-text);
+    font-family: "Courier New", monospace;
+    margin: 0;
+    padding: 2rem 1.25rem;
+  }
+  .dec-wrap { max-width: 640px; margin: 0 auto; }
+  h1 { font-size: 1.1rem; color: var(--dec-accent); margin-bottom: 0.3rem; }
+  .dec-sub { color: #7b8494; font-size: 0.85rem; margin-bottom: 1.5rem; }
+  .dec-panel {
+    background: var(--dec-panel);
+    border: 1px solid var(--dec-border);
+    border-radius: 6px;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+  .dec-panel h2 { font-size: 0.95rem; margin-bottom: 0.75rem; color: var(--dec-text); }
+  label { display: block; font-size: 0.78rem; color: #7b8494; margin-bottom: 0.3rem; }
+  textarea, input {
+    width: 100%;
+    background: #0c0e12;
+    border: 1px solid var(--dec-border);
+    border-radius: 4px;
+    color: var(--dec-text);
+    padding: 0.6rem;
+    font-family: inherit;
+    font-size: 0.88rem;
+    margin-bottom: 0.85rem;
+  }
+  textarea { resize: vertical; min-height: 60px; }
+  button {
+    background: var(--dec-accent);
+    border: none;
+    border-radius: 4px;
+    color: #0c0e12;
+    font-weight: 700;
+    padding: 0.55rem 1.1rem;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  button:hover { opacity: 0.9; }
+  .dec-output {
+    margin-top: 0.85rem;
+    background: #0c0e12;
+    border: 1px solid var(--dec-border);
+    border-radius: 4px;
+    padding: 0.75rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-size: 0.88rem;
+    min-height: 1.4em;
+  }
+  .dec-bruteforce-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid var(--dec-border);
+    font-size: 0.82rem;
+  }
+  .dec-bruteforce-row span:first-child { color: var(--dec-accent); width: 2.5em; flex-shrink: 0; }
+</style>
+</head>
+<body>
+<div class="dec-wrap">
+  <h1>// decryption_tool.exe</h1>
+  <p class="dec-sub">Alat bantu memecahkan pesan terenkripsi yang kamu temukan selama investigasi.</p>
+
+  <div class="dec-panel">
+    <h2>Caesar Cipher — coba semua kemungkinan geseran</h2>
+    <label for="caesar-input">Teks terenkripsi</label>
+    <textarea id="caesar-input" placeholder="Tempel teks di sini..."></textarea>
+    <button id="caesar-btn">Brute-force semua geseran</button>
+    <div id="caesar-output" class="dec-output"></div>
+  </div>
+
+  <div class="dec-panel">
+    <h2>Vigenère Cipher — perlu kata kunci</h2>
+    <label for="vig-input">Teks terenkripsi</label>
+    <textarea id="vig-input" placeholder="Tempel teks di sini..."></textarea>
+    <label for="vig-key">Kata kunci</label>
+    <input id="vig-key" type="text" placeholder="mis. nama proyek rahasia...">
+    <button id="vig-btn">Dekripsi</button>
+    <div id="vig-output" class="dec-output"></div>
+  </div>
+</div>
+
+<script>
+const ALPHABET = "abcdefghijklmnopqrstuvwxyz";
+
+// --- Caesar ---
+function shiftChar(char, shift) {
+  const isUpper = char === char.toUpperCase() && char !== char.toLowerCase();
+  const lower = char.toLowerCase();
+  const idx = ALPHABET.indexOf(lower);
+  if (idx === -1) return char;
+  const shifted = ALPHABET[(idx + shift + 2600) % 26];
+  return isUpper ? shifted.toUpperCase() : shifted;
+}
+function caesarDecode(cipherText, shift) {
+  return cipherText.split("").map((c) => shiftChar(c, -shift)).join("");
+}
+
+document.getElementById("caesar-btn").addEventListener("click", () => {
+  const input = document.getElementById("caesar-input").value;
+  const outEl = document.getElementById("caesar-output");
+  if (!input.trim()) { outEl.textContent = "Masukkan teks terlebih dahulu."; return; }
+  outEl.innerHTML = "";
+  for (let shift = 1; shift <= 25; shift++) {
+    const row = document.createElement("div");
+    row.className = "dec-bruteforce-row";
+    const label = document.createElement("span");
+    label.textContent = shift;
+    const text = document.createElement("span");
+    text.textContent = caesarDecode(input, shift);
+    row.appendChild(label);
+    row.appendChild(text);
+    outEl.appendChild(row);
+  }
+});
+
+// --- Vigenere ---
+function cleanKey(key) { return key.toLowerCase().replace(/[^a-z]/g, ""); }
+function vigDecode(text, key) {
+  const cleanedKey = cleanKey(key);
+  if (!cleanedKey) return "(kata kunci kosong / tidak mengandung huruf)";
+  let keyPos = 0;
+  return text.split("").map((char) => {
+    const isUpper = char === char.toUpperCase() && char !== char.toLowerCase();
+    const lower = char.toLowerCase();
+    const idx = ALPHABET.indexOf(lower);
+    if (idx === -1) return char;
+    const keyChar = cleanedKey[keyPos % cleanedKey.length];
+    const keyIdx = ALPHABET.indexOf(keyChar);
+    keyPos++;
+    const shifted = ALPHABET[(idx - keyIdx + 2600) % 26];
+    return isUpper ? shifted.toUpperCase() : shifted;
+  }).join("");
+}
+
+document.getElementById("vig-btn").addEventListener("click", () => {
+  const input = document.getElementById("vig-input").value;
+  const key = document.getElementById("vig-key").value;
+  const outEl = document.getElementById("vig-output");
+  if (!input.trim()) { outEl.textContent = "Masukkan teks terlebih dahulu."; return; }
+  if (!key.trim()) { outEl.textContent = "Masukkan kata kunci terlebih dahulu."; return; }
+  outEl.textContent = vigDecode(input, key);
+});
+</script>
+</body>
+</html>

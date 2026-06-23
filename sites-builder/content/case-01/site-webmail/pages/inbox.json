@@ -1,0 +1,50 @@
+{
+  "title": "Kotak Masuk",
+  "fakePath": "/inbox.html",
+  "emails": [
+    {
+      "id": "email-003",
+      "from": "system@veridian-industries.com",
+      "fromName": "HR System (automated)",
+      "to": "team-sustainability@veridian-industries.com",
+      "subject": "Personnel Update: Daniel Kurniawan",
+      "date": "2026-02-02T09:05:00",
+      "read": false,
+      "bodyHtml": "<p>Tim,</p><p>Mohon diinformasikan bahwa Daniel Kurniawan telah mengundurkan diri dari posisinya sebagai Head of R&amp;D, efektif segera. Kami mengucapkan terima kasih atas kontribusinya.</p><p>Pertanyaan terkait transisi tugas dapat diarahkan ke Richard Hale.</p><p>— Sistem HR Otomatis</p>",
+      "attachments": [],
+      "formattedDate": "2 Feb 2026, 09:05",
+      "preview": "Tim,Mohon diinformasikan bahwa Daniel Kurniawan telah mengundurkan diri dari posisinya seb..."
+    },
+    {
+      "id": "email-002",
+      "from": "r.hale@veridian-industries.com",
+      "fromName": "Richard Hale",
+      "to": "daniel.kurniawan@veridian-industries.com",
+      "subject": "Re: FYI - angka Q4 perlu dicek ulang",
+      "date": "2026-01-30T08:15:00",
+      "read": false,
+      "bodyHtml": "<p>Daniel,</p><p>Terima kasih sudah lapor, tapi tolong jangan forward ini ke siapa-siapa dulu. Aku yang akan handle langsung dengan tim finance. Kemungkinan besar itu cuma kesalahan rounding di sistem lama.</p><p>Mari ngobrol empat mata besok pagi sebelum kamu kirim apapun ke board atau audit.</p><p>Richard</p>",
+      "attachments": [],
+      "formattedDate": "30 Jan 2026, 08:15",
+      "preview": "Daniel,Terima kasih sudah lapor, tapi tolong jangan forward ini ke siapa-siapa dulu. Aku y..."
+    },
+    {
+      "id": "email-001",
+      "from": "daniel.kurniawan@veridian-industries.com",
+      "fromName": "Daniel Kurniawan",
+      "to": "team-sustainability@veridian-industries.com",
+      "subject": "FYI - angka Q4 perlu dicek ulang",
+      "date": "2026-01-29T16:42:00",
+      "read": false,
+      "bodyHtml": "<p>Tim,</p><p>Sebelum laporan Q4 dikirim ke board, aku mau kalian sempat cek lampiran ini. Ada beberapa baris di emission_summary yang angkanya tidak konsisten dengan data mentah dari sensor lapangan — selisihnya cukup besar untuk bukan sekadar typo.</p><p>Aku belum mau buat ini ramai sebelum aku yakin. Tapi kalau aku tiba-tiba tidak bisa lanjutkan ini minggu depan, tolong ada yang follow up ke bagian audit internal.</p><p>— Daniel</p>",
+      "attachments": [
+        {
+          "name": "emission_summary_q4_DRAFT.xlsx",
+          "note": "(lampiran tidak benar-benar bisa dibuka — ini ARG, bukan file sungguhan)"
+        }
+      ],
+      "formattedDate": "29 Jan 2026, 16:42",
+      "preview": "Tim,Sebelum laporan Q4 dikirim ke board, aku mau kalian sempat cek lampiran ini. Ada beber..."
+    }
+  ]
+}

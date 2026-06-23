@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Submit Jawaban — ARG Platform</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+<style>
+  .sa-wrap { max-width: 640px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+  .sa-back { color: var(--hub-muted); text-decoration: none; font-size: 0.85rem; display: inline-block; margin-bottom: 1.5rem; }
+  .sa-back:hover { color: var(--hub-text); }
+  .sa-title { font-size: 1.4rem; margin-bottom: 0.4rem; }
+  .sa-sub { color: var(--hub-muted); margin-bottom: 2rem; font-size: 0.9rem; }
+
+  .sa-puzzle {
+    background: var(--hub-panel);
+    border: 1px solid var(--hub-border);
+    border-radius: 8px;
+    padding: 1.4rem;
+    margin-bottom: 1.2rem;
+  }
+  .sa-puzzle--locked { opacity: 0.45; }
+  .sa-puzzle--solved { border-color: #3fae6a; }
+  .sa-puzzle__header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.6rem; }
+  .sa-puzzle__name { font-size: 0.95rem; font-weight: 600; }
+  .sa-puzzle__status { font-size: 0.78rem; color: var(--hub-muted); }
+  .sa-puzzle__status--solved { color: #3fae6a; }
+  .sa-puzzle__prompt { font-size: 0.88rem; color: var(--hub-muted); margin-bottom: 0.9rem; line-height: 1.5; }
+  .sa-puzzle__row { display: flex; gap: 0.5rem; }
+  .sa-puzzle__row input {
+    flex: 1;
+    background: #0c0e12;
+    border: 1px solid var(--hub-border);
+    border-radius: 5px;
+    color: var(--hub-text);
+    padding: 0.55rem 0.8rem;
+    font-size: 0.88rem;
+  }
+  .sa-puzzle__row button {
+    background: var(--hub-accent);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.55rem 1.1rem;
+    cursor: pointer;
+    font-size: 0.85rem;
+  }
+  .sa-puzzle__row button:disabled { opacity: 0.5; cursor: not-allowed; }
+  .sa-puzzle__feedback { margin-top: 0.6rem; font-size: 0.82rem; min-height: 1.2em; }
+  .sa-puzzle__feedback--correct { color: #3fae6a; }
+  .sa-puzzle__feedback--wrong { color: #e85f5f; }
+
+  .sa-locked-note { font-size: 0.82rem; color: var(--hub-muted); font-style: italic; }
+  .sa-login-warning {
+    background: var(--hub-panel);
+    border: 1px solid var(--hub-border);
+    border-radius: 8px;
+    padding: 1.2rem;
+    text-align: center;
+    color: var(--hub-muted);
+    font-size: 0.9rem;
+  }
+</style>
+</head>
+<body>
+  <div class="sa-wrap">
+    <a class="sa-back" href="index.html">&larr; Kembali ke Hub</a>
+    <h1 class="sa-title">Submit Jawaban — Case 01</h1>
+    <p class="sa-sub" id="sa-player-line">Memeriksa status login...</p>
+
+    <div id="sa-puzzle-list"></div>
+  </div>
+
+<script src="submit-answer.js"></script>
+</body>
+</html>

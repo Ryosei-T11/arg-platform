@@ -1,0 +1,7 @@
+{
+  "template": "webmail-client",
+  "mailDomain": "mirawijaya.blog",
+  "fakeDomain": "mail.mirawijaya.blog",
+  "loggedInAs": "mira.w@mirawijaya.blog",
+  "_comment": "pages/inbox.json digenerate otomatis dari puzzle-engine/inbox-sim/emails/case-02/*.json"
+}

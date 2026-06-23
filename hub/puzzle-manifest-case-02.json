@@ -1,0 +1,19 @@
+{
+  "_comment": "Versi PUBLIK dari answer-keys/case-02.json — TANPA acceptedAnswers. Aman dipakai client-side di hub.",
+  "caseSlug": "case-02",
+  "order": ["phishing-domain", "operator-ip", "operator-alias"],
+  "puzzles": {
+    "phishing-domain": {
+      "prompt": "Domain apa yang sebenarnya mengirim email 'verifikasi akun' palsu ke Mira? (cek header pengirim di webmail)",
+      "pointValue": 20
+    },
+    "operator-ip": {
+      "prompt": "Alamat IP apa yang dipakai untuk mengakses dashboard admin dan mengekspor kontak Mira? (cek access.log di terminal)",
+      "pointValue": 25
+    },
+    "operator-alias": {
+      "prompt": "Apa alias yang dipakai operator di balik IP tersebut?",
+      "pointValue": 35
+    }
+  }
+}

@@ -1,0 +1,82 @@
+:root {
+  --mail-bg: #f1f3f5;
+  --mail-panel: #ffffff;
+  --mail-border: #d4d8dd;
+  --mail-text: #2b2f36;
+  --mail-muted: #767d89;
+  --mail-accent: #2962ff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--mail-bg);
+  color: var(--mail-text);
+}
+
+.mail-header {
+  background: #1f2937;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+.mail-header__logo { font-weight: 700; }
+.mail-header__account { color: #b8c0cc; }
+
+.mail-layout {
+  display: flex;
+  max-width: 900px;
+  margin: 1.5rem auto;
+  gap: 1.25rem;
+  padding: 0 1.25rem;
+}
+
+.mail-sidebar {
+  width: 160px;
+  flex-shrink: 0;
+}
+.mail-sidebar__item {
+  padding: 0.55rem 0.8rem;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  color: var(--mail-muted);
+  margin-bottom: 0.2rem;
+}
+.mail-sidebar__item--active {
+  background: #e3e9ff;
+  color: var(--mail-accent);
+  font-weight: 600;
+}
+
+.mail-list { flex: 1; min-width: 0; }
+
+.mail-item {
+  background: var(--mail-panel);
+  border: 1px solid var(--mail-border);
+  border-radius: 6px;
+  padding: 1.1rem 1.25rem;
+  margin-bottom: 0.9rem;
+}
+.mail-item__top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--mail-muted);
+  margin-bottom: 0.3rem;
+}
+.mail-item__from { font-weight: 700; color: var(--mail-text); }
+.mail-item__subject { font-size: 1rem; margin-bottom: 0.5rem; }
+.mail-item__preview { display: none; } /* preview dipakai di list ringkas, di sini kita tampilkan full body */
+.mail-item__body { font-size: 0.92rem; line-height: 1.6; }
+.mail-item__body p { margin-bottom: 0.7rem; }
+.mail-item__meta {
+  margin-top: 0.7rem;
+  padding-top: 0.6rem;
+  border-top: 1px dashed var(--mail-border);
+  font-size: 0.72rem;
+  color: var(--mail-muted);
+}

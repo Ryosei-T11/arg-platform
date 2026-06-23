@@ -1,0 +1,98 @@
+:root {
+  --news-bg: #ffffff;
+  --news-text: #1a1a1a;
+  --news-muted: #6b6b6b;
+  --news-accent: #c0392b;
+  --news-border: #e2e2e2;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--news-text);
+  background: var(--news-bg);
+}
+
+.news-header {
+  border-bottom: 3px solid var(--news-text);
+  padding: 0.75rem 1.5rem 1rem;
+}
+.news-header__top {
+  display: flex;
+  justify-content: space-between;
+  font-family: Arial, sans-serif;
+  font-size: 0.72rem;
+  color: var(--news-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+.news-header__logo {
+  font-size: 1.8rem;
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: -0.01em;
+}
+
+.news-main {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.news-article__kicker {
+  color: var(--news-accent);
+  font-family: Arial, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+}
+.news-article__headline {
+  font-size: 1.7rem;
+  line-height: 1.25;
+  margin-bottom: 0.7rem;
+}
+.news-article__byline {
+  font-family: Arial, sans-serif;
+  font-size: 0.78rem;
+  color: var(--news-muted);
+  margin-bottom: 1.3rem;
+  padding-bottom: 1.3rem;
+  border-bottom: 1px solid var(--news-border);
+}
+.news-article__body { font-size: 1.05rem; line-height: 1.75; }
+.news-article__body p { margin-bottom: 1rem; }
+
+.news-related {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--news-border);
+}
+.news-related h3 {
+  font-family: Arial, sans-serif;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--news-muted);
+  margin-bottom: 0.8rem;
+}
+.news-related__item {
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 0.92rem;
+  color: var(--news-text);
+  text-decoration: none;
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed var(--news-border);
+}
+.news-related__item:hover { color: var(--news-accent); }
+
+.news-footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--news-muted);
+  font-family: Arial, sans-serif;
+  font-size: 0.75rem;
+}

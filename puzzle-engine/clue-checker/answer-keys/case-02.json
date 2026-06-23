@@ -1,0 +1,28 @@
+{
+  "_comment": "File ini HANYA dibaca oleh backend. Jangan pernah copy ke sites-builder/content atau dist/.",
+  "caseSlug": "case-02",
+  "puzzles": {
+    "phishing-domain": {
+      "prompt": "Domain apa yang sebenarnya mengirim email 'verifikasi akun' palsu ke Mira?",
+      "acceptedAnswers": [
+        "instagrarn-secure.com",
+        "instagrarn-secure",
+        "verification@instagrarn-secure.com"
+      ],
+      "unlocksNext": "operator-ip",
+      "pointValue": 20
+    },
+    "operator-ip": {
+      "prompt": "Alamat IP apa yang dipakai untuk mengakses dashboard admin dan mengekspor kontak Mira?",
+      "acceptedAnswers": ["203.0.113.44"],
+      "unlocksNext": "operator-alias",
+      "pointValue": 25
+    },
+    "operator-alias": {
+      "prompt": "Apa alias yang dipakai operator di balik IP tersebut?",
+      "acceptedAnswers": ["reseller_andi88", "andi88", "reseller andi88"],
+      "unlocksNext": null,
+      "pointValue": 35
+    }
+  }
+}

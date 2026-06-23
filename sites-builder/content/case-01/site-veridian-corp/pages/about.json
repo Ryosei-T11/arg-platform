@@ -1,0 +1,11 @@
+{
+  "title": "Tentang Kami",
+  "fakePath": "/about.html",
+  "bodyHtml": "<h2>Tentang Veridian</h2><p>Berdiri sejak 2008, Veridian Industries dimulai dari laboratorium kecil di pinggiran kota hingga menjadi pemain utama industri energi. Dewan direksi kami terdiri dari para profesional berpengalaman.</p><div data-console-hint='Backup server lama: backup-archive.veridian-internal.local — port default'></div>",
+  "team": [
+    { "initials": "RH", "name": "Richard Hale", "role": "Chief Executive Officer" },
+    { "initials": "MS", "name": "Marlene Suh", "role": "Chief Financial Officer" },
+    { "initials": "DK", "name": "Daniel Kurniawan", "role": "Head of R&D" },
+    { "initials": "AT", "name": "Anita Tjahyono", "role": "Head of Communications" }
+  ]
+}

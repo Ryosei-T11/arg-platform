@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{page.title}} | {{site.companyName}}</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="{{assetPath}}/style.css">
+</head>
+<body>
+  {{> browser-chrome}}
+
+  <header class="corp-header">
+    <div class="corp-header__inner">
+      <a href="{{root}}/home.html" class="corp-logo">{{site.companyName}}</a>
+      <nav class="corp-nav">
+        {{#each site.nav}}
+        <a href="{{root}}/{{this.href}}" class="corp-nav__link">{{this.label}}</a>
+        {{/each}}
+      </nav>
+    </div>
+  </header>
+
+  <main class="corp-main">
+    {{#if page.hero}}
+    <section class="corp-hero">
+      <h1>{{page.hero.heading}}</h1>
+      <p>{{page.hero.subheading}}</p>
+    </section>
+    {{/if}}
+
+    <article class="corp-content">
+      {{{page.bodyHtml}}}
+    </article>
+
+    {{#if page.team}}
+    <section class="corp-team">
+      <h2>Tim Kami</h2>
+      <div class="corp-team__grid">
+        {{#each page.team}}
+        <div class="corp-team__card">
+          <div class="corp-team__photo" data-initials="{{this.initials}}"></div>
+          <h3>{{this.name}}</h3>
+          <p>{{this.role}}</p>
+        </div>
+        {{/each}}
+      </div>
+    </section>
+    {{/if}}
+  </main>
+
+  <footer class="corp-footer">
+    <p>&copy; {{site.foundedYear}}–2026 {{site.companyName}}. All rights reserved.</p>
+    <p class="corp-footer__tagline">{{site.tagline}}</p>
+  </footer>
+
+  <script src="{{assetPath}}/script.js"></script>
+</body>
+</html>

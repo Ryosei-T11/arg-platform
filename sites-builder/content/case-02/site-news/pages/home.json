@@ -1,0 +1,13 @@
+{
+  "title": "Modus Akun Kembar Marak di Kota",
+  "fakePath": "/home.html",
+  "todayLabel": "Jumat, 19 Juni 2026",
+  "kicker": "KRIMINAL SIBER",
+  "headline": "Polisi Selidiki Pola Penipuan 'Akun Kembar' yang Menyasar Belasan Korban",
+  "author": "Tim Redaksi",
+  "publishedDate": "19 Juni 2026",
+  "bodyHtml": "<p>Sedikitnya 14 laporan penipuan dengan modus serupa diterima kepolisian dalam dua bulan terakhir: pelaku membuat akun media sosial tiruan menggunakan foto profil korban asli, lalu menghubungi kenalan korban untuk meminta uang.</p><p>Penyidik menduga pelaku mendapatkan foto-foto tersebut bukan dari media sosial publik semata, melainkan lewat akses tidak sah ke akun email korban melalui email phishing bertema 'verifikasi akun'.</p><p>Salah satu korban, seorang desainer grafis berinisial M.W., mengaku mulai melacak sendiri jejak digital pelaku setelah laporan resminya belum ditindaklanjuti.</p><p>Polisi mengimbau warga untuk tidak sembarangan mengklik tautan verifikasi akun yang dikirim lewat email, dan selalu memeriksa alamat pengirim secara saksama.</p>",
+  "relatedArticles": [
+    { "title": "Cara Mengenali Email Phishing Bertema Verifikasi Akun", "href": "tips-phishing.html" }
+  ]
+}

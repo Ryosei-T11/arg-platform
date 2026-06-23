@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>backup-archive.veridian-internal.local</title>
+<link rel="icon" href="data:,">
+<style>
+  body {
+    background: #0c0e10;
+    color: #5fe07a;
+    font-family: "Courier New", monospace;
+    margin: 0;
+    padding: 1.5rem;
+    min-height: 100vh;
+  }
+  .term-banner {
+    color: #888;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    white-space: pre-wrap;
+  }
+  #term-output {
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin-bottom: 0.5rem;
+  }
+  .term-line { margin-bottom: 0.15rem; }
+  .term-line--cmd { color: #5fe07a; }
+  .term-line--error { color: #e85f5f; }
+  .term-line--output { color: #c9d1d9; }
+  .term-input-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .term-prompt { color: #5fe07a; white-space: nowrap; }
+  #term-input {
+    background: transparent;
+    border: none;
+    color: #5fe07a;
+    font-family: inherit;
+    font-size: 1rem;
+    flex: 1;
+    outline: none;
+  }
+</style>
+</head>
+<body>
+  <div class="term-banner">Veridian Internal Backup Server
+Unauthorized access is prohibited and monitored.
+(this notice has not been updated since 2019)
+
+Type 'help' for available commands.
+</div>
+  <div id="term-output"></div>
+  <div class="term-input-row">
+    <span class="term-prompt" id="term-prompt">guest@backup-archive:/$</span>
+    <input id="term-input" type="text" autofocus autocomplete="off" spellcheck="false">
+  </div>
+
+<script>
+// ---- Filesystem virtual (disalin dari puzzle-engine/terminal-sim/filesystem-fake.json) ----
+const FS = {
+  "_comment": "Filesystem virtual untuk case-02. Diakses lewat terminal-sim setelah pemain menemukan domain phishing dari email dan tahu cara mengaksesnya dari clue forum CyberSafe.",
+  "/": {
+    "type": "dir",
+    "children": [
+      "var",
+      "etc",
+      "README.txt"
+    ]
+  },
+  "/README.txt": {
+    "type": "file",
+    "content": "cloudbackup-pro.net — internal staging server\nLeft exposed after migration in March. Scheduled for takedown that never happened."
+  },
+  "/var": {
+    "type": "dir",
+    "children": [
+      "log",
+      "www"
+    ]
+  },
+  "/var/log": {
+    "type": "dir",
+    "children": [
+      "access.log",
+      "upload.log"
+    ]
+  },
+  "/var/log/access.log": {
+    "type": "file",
+    "content": "2026-05-29 14:36:02 - POST /sync?user=mira.w - 203.0.113.44 - status=200\n2026-05-29 14:36:05 - GET /admin/dashboard - 203.0.113.44 - status=200\n2026-05-29 14:36:40 - GET /admin/export?target=contacts - 203.0.113.44 - status=200"
+  },
+  "/var/log/upload.log": {
+    "type": "file",
+    "content": "1247 files synced from victim session: mira.w\noperator_session_owner: 203.0.113.44\noperator_alias: 'reseller_andi88'"
+  },
+  "/var/www": {
+    "type": "dir",
+    "children": [
+      "admin"
+    ]
+  },
+  "/var/www/admin": {
+    "type": "dir",
+    "children": [
+      "operators.csv"
+    ]
+  },
+  "/var/www/admin/operators.csv": {
+    "type": "file",
+    "content": "alias,real_name_guess,ip,active_since\nreseller_andi88,Andi Setiawan (unverified),203.0.113.44,2026-03-12\nreseller_budi02,unknown,198.51.100.7,2026-04-01"
+  },
+  "/etc": {
+    "type": "dir",
+    "children": [
+      "hostname"
+    ]
+  },
+  "/etc/hostname": {
+    "type": "file",
+    "content": "cloudbackup-pro-staging-01"
+  }
+};
+
+// ---- Terminal engine versi browser (port dari terminal.js) ----
+function resolvePath(cwd, target) {
+  if (target.startsWith("/")) return normalize(target);
+  if (target === "..") {
+    const parts = cwd.split("/").filter(Boolean);
+    parts.pop();
+    return "/" + parts.join("/");
+  }
+  if (target === ".") return cwd;
+  const joined = cwd === "/" ? `/${target}` : `${cwd}/${target}`;
+  return normalize(joined);
+}
+function normalize(p) {
+  return p.replace(/\/+/g, "/").replace(/\/$/, "") || "/";
+}
+
+const COMMANDS = {
+  ls(args, ctx) {
+    const targetPath = args[0] ? resolvePath(ctx.cwd, args[0]) : ctx.cwd;
+    const node = ctx.fs[targetPath];
+    if (!node) return { output: `ls: cannot access '${args[0] || targetPath}': No such file or directory`, error: true };
+    if (node.type !== "dir") return { output: args[0] || targetPath, error: false };
+    return { output: node.children.join("  "), error: false };
+  },
+  cat(args, ctx) {
+    if (!args[0]) return { output: "cat: missing file operand", error: true };
+    const targetPath = resolvePath(ctx.cwd, args[0]);
+    const node = ctx.fs[targetPath];
+    if (!node) return { output: `cat: ${args[0]}: No such file or directory`, error: true };
+    if (node.type !== "file") return { output: `cat: ${args[0]}: Is a directory`, error: true };
+    return { output: node.content, error: false };
+  },
+  grep(args, ctx) {
+    const recursive = args.includes("-r");
+    const cleanArgs = args.filter((a) => a !== "-r");
+    const [needle, filePath] = cleanArgs;
+    if (!needle) return { output: "grep: missing search pattern", error: true };
+    const matches = [];
+    if (recursive || !filePath) {
+      for (const [p, node] of Object.entries(ctx.fs)) {
+        if (node.type === "file" && node.content.toLowerCase().includes(needle.toLowerCase())) {
+          node.content.split("\n").forEach((line) => {
+            if (line.toLowerCase().includes(needle.toLowerCase())) matches.push(`${p}: ${line}`);
+          });
+        }
+      }
+    } else {
+      const targetPath = resolvePath(ctx.cwd, filePath);
+      const node = ctx.fs[targetPath];
+      if (!node || node.type !== "file") return { output: `grep: ${filePath}: No such file`, error: true };
+      node.content.split("\n").forEach((line) => {
+        if (line.toLowerCase().includes(needle.toLowerCase())) matches.push(line);
+      });
+    }
+    return { output: matches.join("\n"), error: false };
+  }
+};
+
+class Terminal {
+  constructor(filesystem, promptLabel = "guest@backup-archive") {
+    this.fs = filesystem;
+    this.cwd = "/";
+    this.promptLabel = promptLabel;
+  }
+  prompt() { return `${this.promptLabel}:${this.cwd}$`; }
+  run(rawLine) {
+    const line = rawLine.trim();
+    if (!line) return { output: "", error: false };
+    const [cmd, ...args] = line.split(/\s+/);
+    if (cmd === "cd") return this._cd(args[0]);
+    if (cmd === "pwd") return { output: this.cwd, error: false };
+    if (cmd === "help") return { output: "Available commands: ls, cat, cd, pwd, grep, clear", error: false };
+    if (cmd === "clear") return { output: "__CLEAR__", error: false };
+    const handler = COMMANDS[cmd];
+    if (!handler) return { output: `${cmd}: command not found`, error: true };
+    return handler(args, { fs: this.fs, cwd: this.cwd });
+  }
+  _cd(target) {
+    if (!target || target === "~") { this.cwd = "/"; return { output: "", error: false }; }
+    const targetPath = resolvePath(this.cwd, target);
+    const node = this.fs[targetPath];
+    if (!node) return { output: `cd: ${target}: No such file or directory`, error: true };
+    if (node.type !== "dir") return { output: `cd: ${target}: Not a directory`, error: true };
+    this.cwd = targetPath;
+    return { output: "", error: false };
+  }
+}
+
+// ---- Wiring ke DOM ----
+const term = new Terminal(FS);
+const outputEl = document.getElementById("term-output");
+const inputEl = document.getElementById("term-input");
+const promptEl = document.getElementById("term-prompt");
+
+function appendLine(text, cls) {
+  const div = document.createElement("div");
+  div.className = "term-line " + (cls || "");
+  div.textContent = text;
+  outputEl.appendChild(div);
+}
+
+inputEl.addEventListener("keydown", (e) => {
+  if (e.key !== "Enter") return;
+  const line = inputEl.value;
+  appendLine(`${term.prompt()} ${line}`, "term-line--cmd");
+  const result = term.run(line);
+  if (result.output === "__CLEAR__") {
+    outputEl.innerHTML = "";
+  } else if (result.output) {
+    appendLine(result.output, result.error ? "term-line--error" : "term-line--output");
+  }
+  promptEl.textContent = term.prompt();
+  inputEl.value = "";
+  window.scrollTo(0, document.body.scrollHeight);
+});
+
+document.body.addEventListener("click", () => inputEl.focus());
+</script>
+</body>
+</html>

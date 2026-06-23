@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{page.title}} — {{site.outletName}}</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="{{assetPath}}/style.css">
+</head>
+<body>
+  {{> browser-chrome}}
+
+  <header class="news-header">
+    <div class="news-header__top">
+      <span class="news-header__date">{{page.todayLabel}}</span>
+      <span class="news-header__section">{{site.section}}</span>
+    </div>
+    <h1 class="news-header__logo">{{site.outletName}}</h1>
+  </header>
+
+  <main class="news-main">
+    <article class="news-article">
+      <p class="news-article__kicker">{{page.kicker}}</p>
+      <h2 class="news-article__headline">{{page.headline}}</h2>
+      <p class="news-article__byline">Oleh {{page.author}} &middot; {{page.publishedDate}}</p>
+      <div class="news-article__body">{{{page.bodyHtml}}}</div>
+    </article>
+
+    {{#if page.relatedArticles}}
+    <aside class="news-related">
+      <h3>Berita Terkait</h3>
+      {{#each page.relatedArticles}}
+      <a href="{{root}}/{{this.href}}" class="news-related__item">{{this.title}}</a>
+      {{/each}}
+    </aside>
+    {{/if}}
+  </main>
+
+  <footer class="news-footer">
+    <p>&copy; 2026 {{site.outletName}}. Semua hak dilindungi.</p>
+  </footer>
+
+  <script src="{{assetPath}}/script.js"></script>
+</body>
+</html>

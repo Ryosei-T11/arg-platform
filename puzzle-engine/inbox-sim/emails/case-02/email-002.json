@@ -1,0 +1,11 @@
+{
+  "id": "email-002",
+  "from": "noreply@cloudbackup-pro.net",
+  "fromName": "CloudBackup Pro",
+  "to": "mira.w@mirawijaya.blog",
+  "subject": "Backup foto Anda berhasil disinkronkan",
+  "date": "2026-05-29T14:35:00",
+  "read": false,
+  "bodyHtml": "<p>Halo,</p><p>Foto dan video Anda telah berhasil disinkronkan ke akun CloudBackup Pro setelah verifikasi terbaru. Total 1.247 item berhasil dicadangkan.</p><p>Jika Anda tidak mengenali aktivitas ini, segera hubungi dukungan pelanggan.</p>",
+  "attachments": []
+}

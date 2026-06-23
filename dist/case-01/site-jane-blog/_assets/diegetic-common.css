@@ -1,0 +1,41 @@
+/* Dipakai lintas semua jenis situs — di-include terpisah dari style.css tiap template */
+
+.fake-browser-chrome {
+  background: #e8eaed;
+  border-bottom: 1px solid #c4c7cc;
+  padding: 0.4rem 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: Arial, sans-serif;
+}
+.fake-browser-chrome__dots {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.fake-browser-chrome__dots span {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: #b9bcc2;
+  display: inline-block;
+}
+.fake-browser-chrome__bar {
+  background: #fff;
+  border: 1px solid #c4c7cc;
+  border-radius: 14px;
+  padding: 0.3rem 0.9rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  color: #444;
+  max-width: 520px;
+}
+.fake-browser-chrome__lock { font-size: 0.75rem; }
+.fake-browser-chrome__url {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARG Platform — Pilih Kasus</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hub-wrap">
+    <header class="hub-header">
+      <h1>ARG Platform</h1>
+      <p>Pilih kasus, masuk sebagai detektif, dan mulai jelajahi internet buatan kami.</p>
+    </header>
+
+    <section class="hub-login">
+      <label for="display-name">Nama detektif kamu</label>
+      <div class="hub-login__row">
+        <input id="display-name" type="text" placeholder="mis. detektif_amel" maxlength="32">
+        <button id="login-btn">Mulai</button>
+      </div>
+      <p id="login-status" class="hub-status"></p>
+    </section>
+
+    <section class="hub-cases">
+      <article class="hub-case-card">
+        <h2>Case 01: The Veridian Files</h2>
+        <p>Seorang Head of R&amp;D menghilang setelah "mengundurkan diri secara mendadak". Telusuri situs perusahaan, forum bawah tanah, kotak masuk email, dan server backup yang terlupakan untuk mengungkap kebenarannya.</p>
+        <div class="hub-case-card__actions">
+          <a class="hub-case-card__link" href="../dist/case-01/site-veridian-corp/home.html">Mulai Investigasi &rarr;</a>
+          <a class="hub-case-card__link hub-case-card__link--secondary" href="submit-answer.html?case=case-01">Submit Jawaban</a>
+        </div>
+      </article>
+
+      <article class="hub-case-card">
+        <h2>Case 02: The Mirrored Profile</h2>
+        <p>Akun media sosial Mira ditiru untuk menipu teman-temannya. Telusuri blog korban, forum keamanan siber, portal berita, kotak masuk email phishing, dan server staging yang bocor untuk membongkar identitas pelaku.</p>
+        <div class="hub-case-card__actions">
+          <a class="hub-case-card__link" href="../dist/case-02/site-mira-blog/home.html">Mulai Investigasi &rarr;</a>
+          <a class="hub-case-card__link hub-case-card__link--secondary" href="submit-answer.html?case=case-02">Submit Jawaban</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="hub-tools">
+      <h2>Alat Investigasi</h2>
+      <div class="hub-tools__row">
+        <a class="hub-tool-link" href="../dist/tools/decryption-tool/index.html">🔓 Decryption Tool</a>
+        <a class="hub-tool-link" href="case-complete.html?case=case-01">✅ Hasil Case 01</a>
+        <a class="hub-tool-link" href="case-complete.html?case=case-02">✅ Hasil Case 02</a>
+      </div>
+    </section>
+
+    <section class="hub-leaderboard">
+      <h2>Papan Peringkat — Case 01</h2>
+      <ol id="leaderboard-list"><li class="hub-loading">Memuat...</li></ol>
+    </section>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>

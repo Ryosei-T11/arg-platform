@@ -1,0 +1,32 @@
+{
+  "title": "Kotak Masuk",
+  "fakePath": "/inbox.html",
+  "emails": [
+    {
+      "id": "email-002",
+      "from": "noreply@cloudbackup-pro.net",
+      "fromName": "CloudBackup Pro",
+      "to": "mira.w@mirawijaya.blog",
+      "subject": "Backup foto Anda berhasil disinkronkan",
+      "date": "2026-05-29T14:35:00",
+      "read": false,
+      "bodyHtml": "<p>Halo,</p><p>Foto dan video Anda telah berhasil disinkronkan ke akun CloudBackup Pro setelah verifikasi terbaru. Total 1.247 item berhasil dicadangkan.</p><p>Jika Anda tidak mengenali aktivitas ini, segera hubungi dukungan pelanggan.</p>",
+      "attachments": [],
+      "formattedDate": "29 Mei 2026, 14:35",
+      "preview": "Halo,Foto dan video Anda telah berhasil disinkronkan ke akun CloudBackup Pro setelah verif..."
+    },
+    {
+      "id": "email-001",
+      "from": "verification@instagrarn-secure.com",
+      "fromName": "Instagram Security Team",
+      "to": "mira.w@mirawijaya.blog",
+      "subject": "Tindakan Diperlukan: Verifikasi Akun Anda Sebelum Ditangguhkan",
+      "date": "2026-05-29T14:20:00",
+      "read": false,
+      "bodyHtml": "<p>Pengguna yang terhormat,</p><p>Kami mendeteksi aktivitas tidak biasa pada akun Anda. Untuk melindungi keamanan akun, mohon verifikasi identitas Anda dalam 24 jam melalui tautan berikut, atau akun akan ditangguhkan secara permanen.</p><p>[VERIFIKASI SEKARANG]</p><p>Tim Keamanan Instagram</p>",
+      "attachments": [],
+      "formattedDate": "29 Mei 2026, 14:20",
+      "preview": "Pengguna yang terhormat,Kami mendeteksi aktivitas tidak biasa pada akun Anda. Untuk melind..."
+    }
+  ]
+}

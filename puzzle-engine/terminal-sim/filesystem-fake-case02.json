@@ -1,0 +1,47 @@
+{
+  "_comment": "Filesystem virtual untuk case-02. Diakses lewat terminal-sim setelah pemain menemukan domain phishing dari email dan tahu cara mengaksesnya dari clue forum CyberSafe.",
+  "/": {
+    "type": "dir",
+    "children": ["var", "etc", "README.txt"]
+  },
+  "/README.txt": {
+    "type": "file",
+    "content": "cloudbackup-pro.net — internal staging server\nLeft exposed after migration in March. Scheduled for takedown that never happened."
+  },
+  "/var": {
+    "type": "dir",
+    "children": ["log", "www"]
+  },
+  "/var/log": {
+    "type": "dir",
+    "children": ["access.log", "upload.log"]
+  },
+  "/var/log/access.log": {
+    "type": "file",
+    "content": "2026-05-29 14:36:02 - POST /sync?user=mira.w - 203.0.113.44 - status=200\n2026-05-29 14:36:05 - GET /admin/dashboard - 203.0.113.44 - status=200\n2026-05-29 14:36:40 - GET /admin/export?target=contacts - 203.0.113.44 - status=200"
+  },
+  "/var/log/upload.log": {
+    "type": "file",
+    "content": "1247 files synced from victim session: mira.w\noperator_session_owner: 203.0.113.44\noperator_alias: 'reseller_andi88'"
+  },
+  "/var/www": {
+    "type": "dir",
+    "children": ["admin"]
+  },
+  "/var/www/admin": {
+    "type": "dir",
+    "children": ["operators.csv"]
+  },
+  "/var/www/admin/operators.csv": {
+    "type": "file",
+    "content": "alias,real_name_guess,ip,active_since\nreseller_andi88,Andi Setiawan (unverified),203.0.113.44,2026-03-12\nreseller_budi02,unknown,198.51.100.7,2026-04-01"
+  },
+  "/etc": {
+    "type": "dir",
+    "children": ["hostname"]
+  },
+  "/etc/hostname": {
+    "type": "file",
+    "content": "cloudbackup-pro-staging-01"
+  }
+}

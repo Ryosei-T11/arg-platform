@@ -1,0 +1,7 @@
+{
+  "template": "personal-blog",
+  "blogName": "mira's notes",
+  "fakeDomain": "mirawijaya.blog",
+  "bio": "graphic designer, plant mom, currently dealing with something weird",
+  "nav": [{ "label": "Home", "href": "home.html" }]
+}

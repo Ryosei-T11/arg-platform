@@ -1,0 +1,18 @@
+{
+  "name": "arg-platform-backend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Backend ringan untuk ARG platform: progress player, leaderboard, validasi clue server-side. Menggunakan node:sqlite bawaan (Node 22+) sehingga tidak ada dependency native yang perlu dikompilasi.",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "start": "node --experimental-sqlite src/server.js",
+    "dev": "node --experimental-sqlite --watch src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5"
+  }
+}
