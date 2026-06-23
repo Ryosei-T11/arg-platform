@@ -1,5 +1,6 @@
 // hub/case-complete.js
 const API_BASE = "http://localhost:3001/api";
+<<<<<<< HEAD
 
 const urlParams = new URLSearchParams(window.location.search);
 const CASE_SLUG = urlParams.get("case") || "case-01";
@@ -30,6 +31,14 @@ function renderSummary() {
 }
 renderSummary();
 
+=======
+const CASE_SLUG = "case-01";
+
+const playerLineEl = document.getElementById("cc-player-line");
+const statsEl = document.getElementById("cc-stats");
+const shareBtn = document.getElementById("cc-share-btn");
+
+>>>>>>> 0e2a2c03234cafc207115d10c35fb2df1020178a
 async function loadResult() {
   const playerId = localStorage.getItem("arg_player_id");
   const displayName = localStorage.getItem("arg_display_name");
@@ -77,9 +86,12 @@ function formatPuzzleName(puzzleId) {
     "who-disabled-daniel-account": "Identifikasi pelaku",
     "decrypt-memo": "Dekripsi memo rahasia",
     "final-accusation": "Tuduhan akhir",
+<<<<<<< HEAD
     "phishing-domain": "Temukan domain phishing",
     "operator-ip": "Lacak IP operator",
     "operator-alias": "Bongkar alias operator",
+=======
+>>>>>>> 0e2a2c03234cafc207115d10c35fb2df1020178a
   };
   return names[puzzleId] || puzzleId;
 }

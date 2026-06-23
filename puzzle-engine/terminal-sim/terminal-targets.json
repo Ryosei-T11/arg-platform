@@ -3,10 +3,13 @@
     "name": "Veridian backup server (case-01)",
     "filesystem": "filesystem-fake.json",
     "outPath": "case-01/terminal-backup-archive/index.html"
+<<<<<<< HEAD
   },
   {
     "name": "CloudBackup Pro staging server (case-02)",
     "filesystem": "filesystem-fake-case02.json",
     "outPath": "case-02/terminal-cloudbackup-staging/index.html"
+=======
+>>>>>>> 0e2a2c03234cafc207115d10c35fb2df1020178a
   }
 ]

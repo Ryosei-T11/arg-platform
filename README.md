@@ -27,6 +27,7 @@ alat dekripsi, dan backend ringan untuk progress/leaderboard.
   validate-clue (server-side, jawaban tidak pernah dikirim ke client),
   progress, leaderboard. Sudah dites end-to-end dengan curl, termasuk alur
   3-puzzle berurutan (unlock bertahap).
+<<<<<<< HEAD
 - ✅ Hub (`hub/`) — portal masuk non-diegetic, halaman "Submit Jawaban"
   (`submit-answer.html`) dengan progress bertahap (locked/unlocked/solved)
   yang langsung terhubung ke `validate-clue` API, dan halaman "Case Selesai"
@@ -44,6 +45,15 @@ alat dekripsi, dan backend ringan untuk progress/leaderboard.
     dengan template yang SAMA PERSIS dengan case-01 (forum-conspiracy,
     personal-blog, webmail-client) plus satu template baru (`news-portal`).
 - ✅ Template ke-5: `news-portal` — portal berita gaya broadsheet.
+=======
+- ✅ Hub (`hub/`) — portal masuk non-diegetic + halaman "Case Selesai"
+  (`case-complete.html`) yang menampilkan ringkasan poin per puzzle.
+- ✅ CLI generator (`scripts/new-site.js`) untuk scaffold situs baru dalam
+  hitungan detik.
+- ✅ Satu kasus contoh penuh (case-01: "The Veridian Files") dengan cerita
+  yang nyambung lintas 5 lokasi: situs corporate → forum → blog → webmail →
+  terminal → decrypt tool, dengan 3 puzzle berurutan (85 poin total).
+>>>>>>> 0e2a2c03234cafc207115d10c35fb2df1020178a
 
 ## Cara menjalankan
 
@@ -140,6 +150,7 @@ arg-platform/
 └── scripts/                # CLI helper (new-site.js)
 ```
 
+<<<<<<< HEAD
 ## Catatan penting: hub harus di-serve lewat HTTP server
 
 `hub/submit-answer.js` dan `hub/case-complete.js` memakai `fetch()` untuk
@@ -151,11 +162,14 @@ cd hub && python3 -m http.server 8088
 # lalu buka http://localhost:8088
 ```
 
+=======
+>>>>>>> 0e2a2c03234cafc207115d10c35fb2df1020178a
 ## TODO / ide pengembangan lanjutan
 
 - Hub belum punya autentikasi sungguhan (sengaja ringan — hanya display name,
   cocok untuk game santai, bukan untuk data sensitif).
 - Belum ada deploy script (`scripts/deploy.sh` baru placeholder ide).
+<<<<<<< HEAD
 - `decryptedMemo` di case-01 dan jawaban-jawaban di case-02 masih dicocokkan
   lewat ketik manual di form submit; belum ada widget yang otomatis
   memverifikasi hasil decrypt tool / terminal langsung ke `validate-clue` API
@@ -163,3 +177,13 @@ cd hub && python3 -m http.server 8088
 - Case-03 dst belum dibuat, tapi pola replikasi sudah terbukti dua kali
   (case-01 dan case-02 pakai template yang sama, hanya beda konten + 1
   template baru per kasus jika perlu).
+=======
+- Case-02 dan seterusnya belum dibuat — pola yang sudah terbukti di case-01
+  tinggal direplikasi: buat folder `content/case-02/`, `emails/case-02/`,
+  `answer-keys/case-02.json`, daftarkan terminal target baru jika perlu.
+- Template `news-portal` (disebut di rencana awal) belum dibuat — bisa
+  dicontoh dari pola 4 template yang sudah ada.
+- `decryptedMemo` di case-01 saat ini dicocokkan lewat backend secara manual
+  (pemain ketik hasil decode-nya); belum ada widget yang otomatis memverifikasi
+  hasil decrypt tool langsung terhubung ke `validate-clue` API.
+>>>>>>> 0e2a2c03234cafc207115d10c35fb2df1020178a

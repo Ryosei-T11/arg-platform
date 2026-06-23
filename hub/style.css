@@ -65,7 +65,11 @@ body {
 #login-btn:hover { opacity: 0.9; }
 .hub-status { margin-top: 0.6rem; font-size: 0.85rem; color: var(--hub-accent); min-height: 1.2em; }
 
+<<<<<<< HEAD
 .hub-cases { margin-bottom: 2.5rem; display: flex; flex-direction: column; gap: 1.25rem; }
+=======
+.hub-cases { margin-bottom: 2.5rem; }
+>>>>>>> 0e2a2c03234cafc207115d10c35fb2df1020178a
 
 .hub-tools { margin-bottom: 2.5rem; }
 .hub-tools h2 { font-size: 1rem; margin-bottom: 0.8rem; color: var(--hub-muted); }
@@ -88,7 +92,10 @@ body {
 }
 .hub-case-card h2 { font-size: 1.2rem; margin-bottom: 0.6rem; }
 .hub-case-card p { color: var(--hub-muted); font-size: 0.92rem; margin-bottom: 1.2rem; }
+<<<<<<< HEAD
 .hub-case-card__actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+=======
+>>>>>>> 0e2a2c03234cafc207115d10c35fb2df1020178a
 .hub-case-card__link {
   color: var(--hub-accent);
   text-decoration: none;
@@ -96,7 +103,10 @@ body {
   font-size: 0.92rem;
 }
 .hub-case-card__link:hover { text-decoration: underline; }
+<<<<<<< HEAD
 .hub-case-card__link--secondary { color: var(--hub-muted); }
+=======
+>>>>>>> 0e2a2c03234cafc207115d10c35fb2df1020178a
 
 .hub-leaderboard h2 { font-size: 1.1rem; margin-bottom: 1rem; }
 #leaderboard-list {
