@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{page.title}} - {{site.forumName}}</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="{{assetPath}}/style.css">
+</head>
+<body>
+  {{> browser-chrome}}
+
+  <header class="forum-header">
+    <div class="forum-header__inner">
+      <a href="{{root}}/index.html" class="forum-logo">{{site.forumName}}</a>
+      <span class="forum-header__tagline">{{site.tagline}}</span>
+    </div>
+  </header>
+
+  <main class="forum-main">
+    <div class="forum-thread-title">
+      <h1>{{page.threadTitle}}</h1>
+      <p class="forum-thread-meta">Dibuat oleh <strong>{{page.startedBy}}</strong> &middot; {{page.postedDate}} &middot; {{page.replyCount}} balasan</p>
+    </div>
+
+    <div class="forum-posts">
+      {{#each page.posts}}
+      <div class="forum-post">
+        <div class="forum-post__sidebar">
+          <div class="forum-post__avatar" data-initials="{{this.initials}}"></div>
+          <p class="forum-post__username">{{this.username}}</p>
+          <p class="forum-post__rank">{{this.rank}}</p>
+        </div>
+        <div class="forum-post__body">
+          <p class="forum-post__timestamp">{{this.timestamp}}</p>
+          <div class="forum-post__text">{{{this.html}}}</div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </main>
+
+  <footer class="forum-footer">
+    <p>{{site.forumName}} &mdash; {{site.memberCount}} anggota terdaftar</p>
+  </footer>
+
+  <script src="{{assetPath}}/script.js"></script>
+</body>
+</html>

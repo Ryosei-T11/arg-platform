@@ -1,0 +1,107 @@
+:root {
+  --forum-bg: #1a1d23;
+  --forum-panel: #23272f;
+  --forum-border: #343a45;
+  --forum-text: #c9d1d9;
+  --forum-accent: #e8590c;
+  --forum-muted: #6e7681;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Verdana, Geneva, sans-serif;
+  background: var(--forum-bg);
+  color: var(--forum-text);
+  font-size: 0.92rem;
+}
+
+.forum-header {
+  background: var(--forum-panel);
+  border-bottom: 2px solid var(--forum-accent);
+  padding: 0.85rem 1.5rem;
+}
+.forum-header__inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+.forum-logo {
+  color: var(--forum-accent);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+.forum-header__tagline {
+  color: var(--forum-muted);
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.forum-main {
+  max-width: 900px;
+  margin: 1.5rem auto;
+  padding: 0 1.5rem;
+}
+.forum-thread-title {
+  border-bottom: 1px solid var(--forum-border);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+.forum-thread-title h1 {
+  font-size: 1.3rem;
+  color: #fff;
+}
+.forum-thread-meta {
+  color: var(--forum-muted);
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+}
+
+.forum-post {
+  display: flex;
+  gap: 1rem;
+  background: var(--forum-panel);
+  border: 1px solid var(--forum-border);
+  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 0.9rem;
+}
+.forum-post__sidebar {
+  width: 110px;
+  flex-shrink: 0;
+  text-align: center;
+}
+.forum-post__avatar {
+  width: 48px; height: 48px;
+  border-radius: 4px;
+  background: var(--forum-accent);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 0.4rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+.forum-post__avatar::before { content: attr(data-initials); }
+.forum-post__username { font-weight: 700; color: #fff; font-size: 0.85rem; }
+.forum-post__rank { color: var(--forum-muted); font-size: 0.72rem; margin-top: 0.15rem; }
+
+.forum-post__body { flex: 1; min-width: 0; }
+.forum-post__timestamp {
+  color: var(--forum-muted);
+  font-size: 0.72rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--forum-border);
+  padding-bottom: 0.4rem;
+}
+.forum-post__text p { margin-bottom: 0.6rem; }
+.forum-post__text { word-wrap: break-word; }
+
+.forum-footer {
+  text-align: center;
+  color: var(--forum-muted);
+  font-size: 0.75rem;
+  padding: 1.5rem;
+}

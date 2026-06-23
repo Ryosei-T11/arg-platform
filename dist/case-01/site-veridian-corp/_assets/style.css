@@ -1,0 +1,99 @@
+:root {
+  --corp-primary: #0a3d62;
+  --corp-accent: #1abc9c;
+  --corp-text: #2c3e50;
+  --corp-bg: #f5f7fa;
+  --corp-border: #dfe6e9;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--corp-text);
+  background: var(--corp-bg);
+  line-height: 1.6;
+}
+
+.corp-header {
+  background: var(--corp-primary);
+  border-bottom: 3px solid var(--corp-accent);
+}
+.corp-header__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.corp-logo {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.corp-nav { display: flex; gap: 1.5rem; }
+.corp-nav__link {
+  color: #cfe8ea;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.corp-nav__link:hover { color: #fff; text-decoration: underline; }
+
+.corp-hero {
+  background: linear-gradient(135deg, var(--corp-primary), #145374);
+  color: #fff;
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+.corp-hero h1 { font-size: 2.2rem; margin-bottom: 0.75rem; }
+.corp-hero p { font-size: 1.1rem; opacity: 0.85; max-width: 600px; margin: 0 auto; }
+
+.corp-content {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  font-size: 1.02rem;
+}
+.corp-content h2 { margin: 1.5rem 0 0.75rem; color: var(--corp-primary); }
+.corp-content p { margin-bottom: 1rem; }
+
+.corp-team {
+  max-width: 1100px;
+  margin: 0 auto 3rem;
+  padding: 0 1.5rem;
+}
+.corp-team h2 { color: var(--corp-primary); margin-bottom: 1.5rem; }
+.corp-team__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+}
+.corp-team__card {
+  background: #fff;
+  border: 1px solid var(--corp-border);
+  border-radius: 6px;
+  padding: 1.25rem;
+  text-align: center;
+}
+.corp-team__photo {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: var(--corp-accent);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 0.75rem;
+  font-weight: 700;
+}
+.corp-team__photo::before { content: attr(data-initials); }
+
+.corp-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #7f8c8d;
+  font-size: 0.85rem;
+  border-top: 1px solid var(--corp-border);
+}
+.corp-footer__tagline { font-style: italic; margin-top: 0.25rem; }

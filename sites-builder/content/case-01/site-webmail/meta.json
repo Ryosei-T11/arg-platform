@@ -1,0 +1,7 @@
+{
+  "template": "webmail-client",
+  "mailDomain": "veridian-industries.com",
+  "fakeDomain": "mail.veridian-industries.com",
+  "loggedInAs": "team-sustainability@veridian-industries.com",
+  "_comment": "Halaman pages/inbox.json TIDAK ditulis manual — digenerate otomatis oleh build.js dari puzzle-engine/inbox-sim/emails/case-01/*.json. Lihat fungsi buildWebmailSites()."
+}

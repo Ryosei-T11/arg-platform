@@ -1,0 +1,29 @@
+{
+  "_comment": "File ini HANYA dibaca oleh backend. Jangan pernah copy ke sites-builder/content atau dist/.",
+  "caseSlug": "case-01",
+  "puzzles": {
+    "who-disabled-daniel-account": {
+      "prompt": "Siapa yang menonaktifkan akun Daniel Kurniawan?",
+      "acceptedAnswers": ["richard hale", "r. hale", "r.hale", "rhale"],
+      "unlocksNext": "decrypt-memo",
+      "pointValue": 20
+    },
+    "decrypt-memo": {
+      "prompt": "Dekripsi encrypted_memo.txt (Vigenere, kata kunci nama perusahaan). Siapa yang bertindak sendirian menurut memo itu?",
+      "acceptedAnswers": ["richard", "richard hale", "richard acted alone"],
+      "unlocksNext": "final-accusation",
+      "pointValue": 25
+    },
+    "final-accusation": {
+      "prompt": "Apa motif sebenarnya di balik pengunduran diri palsu Daniel?",
+      "acceptedAnswers": [
+        "manipulasi data emisi",
+        "memalsukan data emisi",
+        "emissions data manipulation",
+        "data emisi q4 dimanipulasi"
+      ],
+      "unlocksNext": null,
+      "pointValue": 40
+    }
+  }
+}

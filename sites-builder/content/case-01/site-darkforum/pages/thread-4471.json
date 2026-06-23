@@ -1,0 +1,31 @@
+{
+  "title": "Apa yang sebenarnya terjadi pada Daniel K.?",
+  "fakePath": "/thread/4471.html",
+  "threadTitle": "[THREAD] Apa yang sebenarnya terjadi pada Daniel K. di Veridian?",
+  "startedBy": "node_seeker",
+  "postedDate": "3 Feb 2026",
+  "replyCount": 2,
+  "posts": [
+    {
+      "username": "node_seeker",
+      "rank": "Member Baru",
+      "initials": "NS",
+      "timestamp": "3 Feb 2026, 22:14",
+      "html": "<p>Siaran pers Veridian bilang Daniel Kurniawan 'mengundurkan diri secara mendadak'. Tapi temanku yang kerja di sana bilang dia tidak pernah pamitan ke siapapun. Mejanya masih ada laptop pas hari itu.</p><p>Ada yang punya info lebih?</p>"
+    },
+    {
+      "username": "greyhat_ind",
+      "rank": "Veteran",
+      "initials": "GH",
+      "timestamp": "3 Feb 2026, 23:02",
+      "html": "<p>Aku cek metadata press release-nya. Dibuat 2 hari SEBELUM tanggal yang tertulis di situs. Seseorang menyiapkan narasi ini lebih dulu.</p><p>Coba cek server backup lama mereka kalau masih hidup. Subdomain internal kadang masih ke-index sebelum di-takedown.</p>"
+    },
+    {
+      "username": "node_seeker",
+      "rank": "Member Baru",
+      "initials": "NS",
+      "timestamp": "4 Feb 2026, 08:47",
+      "html": "<p>Update: nemu sesuatu di console halaman 'About' mereka. Sepertinya ada alamat server lama yang ke-expose. Akan kucoba akses lewat terminal nanti malam.</p>"
+    }
+  ]
+}

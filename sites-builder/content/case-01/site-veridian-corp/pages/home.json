@@ -1,0 +1,9 @@
+{
+  "title": "Beranda",
+  "fakePath": "/home.html",
+  "hero": {
+    "heading": "Memimpin Inovasi Energi Berkelanjutan",
+    "subheading": "Veridian Industries telah mempercayakan solusi energi bersih untuk lebih dari 200 klien korporat sejak 2008."
+  },
+  "bodyHtml": "<h2>Selamat Datang</h2><p>Veridian Industries adalah perusahaan teknologi energi terkemuka yang berkomitmen pada keberlanjutan. Kami percaya bahwa transparansi dan integritas adalah fondasi dari setiap proyek yang kami jalankan.</p><p>Jelajahi situs kami untuk mempelajari lebih lanjut tentang tim dan inisiatif terbaru kami.</p>"
+}

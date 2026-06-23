@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{page.title}} — {{site.mailDomain}} Webmail</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="{{assetPath}}/style.css">
+</head>
+<body>
+  {{> browser-chrome}}
+
+  <header class="mail-header">
+    <span class="mail-header__logo">{{site.mailDomain}} Webmail</span>
+    <span class="mail-header__account">Masuk sebagai: {{site.loggedInAs}}</span>
+  </header>
+
+  <div class="mail-layout">
+    <aside class="mail-sidebar">
+      <div class="mail-sidebar__item mail-sidebar__item--active">Kotak Masuk ({{page.emails.length}})</div>
+      <div class="mail-sidebar__item">Terkirim</div>
+      <div class="mail-sidebar__item">Draf</div>
+      <div class="mail-sidebar__item">Sampah</div>
+    </aside>
+
+    <main class="mail-list">
+      {{#each page.emails}}
+      <article class="mail-item">
+        <div class="mail-item__top">
+          <span class="mail-item__from">{{this.fromName}}</span>
+          <span class="mail-item__date">{{this.formattedDate}}</span>
+        </div>
+        <h3 class="mail-item__subject">{{this.subject}}</h3>
+        <p class="mail-item__preview">{{this.preview}}</p>
+        <div class="mail-item__body">{{{this.bodyHtml}}}</div>
+        <p class="mail-item__meta">Dari: {{this.from}} &middot; Kepada: {{this.to}}</p>
+      </article>
+      {{/each}}
+    </main>
+  </div>
+
+  <script src="{{assetPath}}/script.js"></script>
+</body>
+</html>

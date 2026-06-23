@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{page.title}} — {{site.blogName}}</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="{{assetPath}}/style.css">
+</head>
+<body>
+  {{> browser-chrome}}
+
+  <header class="blog-header">
+    <h1 class="blog-header__name">{{site.blogName}}</h1>
+    <p class="blog-header__bio">{{site.bio}}</p>
+  </header>
+
+  <main class="blog-main">
+    {{#if page.postTitle}}
+    <article class="blog-post">
+      <p class="blog-post__date">{{page.postDate}}</p>
+      <h2 class="blog-post__title">{{page.postTitle}}</h2>
+      <div class="blog-post__body">{{{page.bodyHtml}}}</div>
+    </article>
+    {{/if}}
+
+    {{#if page.entries}}
+    <div class="blog-entry-list">
+      {{#each page.entries}}
+      <a href="{{root}}/{{this.href}}" class="blog-entry-list__item">
+        <span class="blog-entry-list__date">{{this.date}}</span>
+        <span class="blog-entry-list__title">{{this.title}}</span>
+      </a>
+      {{/each}}
+    </div>
+    {{/if}}
+  </main>
+
+  <footer class="blog-footer">
+    <p>{{site.blogName}} &middot; powered by a simpler internet</p>
+  </footer>
+
+  <script src="{{assetPath}}/script.js"></script>
+</body>
+</html>

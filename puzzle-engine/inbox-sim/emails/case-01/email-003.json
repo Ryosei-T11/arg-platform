@@ -1,0 +1,11 @@
+{
+  "id": "email-003",
+  "from": "system@veridian-industries.com",
+  "fromName": "HR System (automated)",
+  "to": "team-sustainability@veridian-industries.com",
+  "subject": "Personnel Update: Daniel Kurniawan",
+  "date": "2026-02-02T09:05:00",
+  "read": false,
+  "bodyHtml": "<p>Tim,</p><p>Mohon diinformasikan bahwa Daniel Kurniawan telah mengundurkan diri dari posisinya sebagai Head of R&amp;D, efektif segera. Kami mengucapkan terima kasih atas kontribusinya.</p><p>Pertanyaan terkait transisi tugas dapat diarahkan ke Richard Hale.</p><p>— Sistem HR Otomatis</p>",
+  "attachments": []
+}

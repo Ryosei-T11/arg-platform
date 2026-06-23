@@ -1,0 +1,13 @@
+{
+  "id": "email-001",
+  "from": "daniel.kurniawan@veridian-industries.com",
+  "fromName": "Daniel Kurniawan",
+  "to": "team-sustainability@veridian-industries.com",
+  "subject": "FYI - angka Q4 perlu dicek ulang",
+  "date": "2026-01-29T16:42:00",
+  "read": false,
+  "bodyHtml": "<p>Tim,</p><p>Sebelum laporan Q4 dikirim ke board, aku mau kalian sempat cek lampiran ini. Ada beberapa baris di emission_summary yang angkanya tidak konsisten dengan data mentah dari sensor lapangan — selisihnya cukup besar untuk bukan sekadar typo.</p><p>Aku belum mau buat ini ramai sebelum aku yakin. Tapi kalau aku tiba-tiba tidak bisa lanjutkan ini minggu depan, tolong ada yang follow up ke bagian audit internal.</p><p>— Daniel</p>",
+  "attachments": [
+    { "name": "emission_summary_q4_DRAFT.xlsx", "note": "(lampiran tidak benar-benar bisa dibuka — ini ARG, bukan file sungguhan)" }
+  ]
+}
